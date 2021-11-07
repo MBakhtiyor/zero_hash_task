@@ -1,4 +1,5 @@
 # Calc VWAP using Coinbase websocket for 3 pairs
+##Tested with Python=3.9.6##
 
 Run script
 `python coinbase_vwap.py`
@@ -11,7 +12,7 @@ Design of solution:
 - Run receive message from websocket and calculation VWAP in different CPU cores
 - `ws_message` put each received message to Queue
 - `calc_vwap` Read message from queue and start calculating VWAP
-- `pairs_trade` is a dict which store last 200 pairs data and pre-calculated data for total_amount and quantity. It allow us skip calculating on each iteration throw all 200 items
+- `pairs_trade` is a dict which store last 200 pairs data and pre-calculated data for total_amount and total_quantity. It allow us skip calculating on each iteration throw all 200 items
 
 2. If CPU has 1 core:
 - Run receive message from websocket
